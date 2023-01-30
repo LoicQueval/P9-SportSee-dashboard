@@ -1,0 +1,28 @@
+.linechart-title {
+  position: absolute;
+  margin-left: 30px;
+  margin-top: 30px;
+  font-size: 15px;
+  color: white;
+  height: 48px;
+  width: 147px;
+  opacity: 0.5;
+}
+
+.linechart {
+  background-color: red;
+  border-radius: 5px;
+
+  .linechart-tooltip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 25px;
+    width: 39px;
+
+    p {
+      font-size: 8px;
+    }
+  }
+}

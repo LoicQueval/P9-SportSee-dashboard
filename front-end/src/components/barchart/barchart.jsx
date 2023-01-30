@@ -1,22 +1,21 @@
 import './barchart.scss';
 import {Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis} from 'recharts';
 import {useEffect, useState} from 'react';
-import {getUserActivity} from '../../services';
-import {CustomTooltip} from '../customTooltip/customTooltip';
+import {getUserActivity} from '../../services/users';
 
 /**
- * Return the user activity in a barchart
+ * Return the user activity in a barchart from Recharts
  * @returns {React.ReactElement} A component
  */
 
 export const Barchart = () => {
     const [serviceData, setServiceData] = useState();
+    const data = [];
 
     useEffect(() => {
         getUserActivity().then((res) => setServiceData(res))
     }, [])
 
-    const data = [];
 
     for (let i = 0; i < serviceData?.sessions.length; i++) {
         data.push({
@@ -25,6 +24,18 @@ export const Barchart = () => {
             calories: serviceData?.sessions[i].calories,
         });
     }
+
+    const CustomTooltip = ({active, payload}) => {
+        if (active && payload && payload.length) {
+            return (
+                <div className="custom-tooltipBarchart">
+                    <p className="label">{`${payload[1].value}Kcal`}</p>
+                    <p className="label">{`${payload[0].value}kg`}</p>
+                </div>
+            );
+        }
+        return null;
+    };
 
     return (
         <div className="barchart">
@@ -39,7 +50,7 @@ export const Barchart = () => {
                                allowDataOverflow={true}
                                dataKey="kilogram" axisLine={false} tickLine={false} tickMargin={25} tickCount={3}
                                orientation="right" color="#9B9EAC"/>
-                        <YAxis yAxisId="left" domain={['dataMin - 25', 'dataMax + 25']} dataKey="calories" hide={true}/>
+                        <YAxis yAxisId="left" domain={['dataMin - 50', 'dataMax + 25']} dataKey="calories" hide={true}/>
                         <Legend verticalAlign="top" height={60} align="right" iconSize={8} iconType="circle"/>
                         <Bar yAxisId="right" dataKey="kilogram" name="Poids (kg)" fill="#282D30"
                              radius={[10, 10, 0, 0]}/>

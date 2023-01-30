@@ -4,6 +4,11 @@ import swimming from '../../assets/images/activities/swimming.PNG'
 import cycling from '../../assets/images/activities/cycling.PNG'
 import bodybuilding from '../../assets/images/activities/bodybuilding.PNG'
 
+/**
+ * Return aside navigation
+ * @returns {React.ReactElement} A component
+ */
+
 export const Aside = () => {
     return (
         <aside>

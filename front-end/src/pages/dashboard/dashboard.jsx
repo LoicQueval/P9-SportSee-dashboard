@@ -1,9 +1,10 @@
 import './dashboard.scss';
-import {getUserData} from '../../services';
+import {getUserData} from '../../services/users';
 import {useEffect, useState} from 'react';
 import {Header} from '../../components/header/header';
 import {Aside} from '../../components/aside/aside';
 import {Barchart} from '../../components/barchart/barchart';
+import {Linechart} from '../../components/linechart/linechart';
 
 function Dashboard() {
     const [serviceData, setServiceData] = useState();
@@ -21,10 +22,15 @@ function Dashboard() {
                 {serviceData && (
                     <section>
                         <h1>Bonjour <span className="red">{serviceData.userInfos.firstName}</span></h1>
-                        <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+                        <p className="congratulation">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
                         <div className="container">
-                            <div className="graph">
-                                <Barchart></Barchart>
+                            <div className="top-graph">
+                                <Barchart/>
+                                <div className="bottom-graph">
+                                    <Linechart/>
+                                    <Linechart/>
+                                    <Linechart/>
+                                </div>
                             </div>
                             <div>
                                 <p>titi</p>

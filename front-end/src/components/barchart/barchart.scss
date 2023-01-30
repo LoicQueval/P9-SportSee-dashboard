@@ -1,8 +1,8 @@
 .barchart {
   background-color: #FBFBFB;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0212249);
   border-radius: 5px;
-  padding: 23px 10px 32.5px 43px;
+  padding: 23px 10px 20px 35px;
 
   .barchart_title {
     position: absolute;
@@ -11,4 +11,20 @@
     line-height: 24px;
     color: #20253A;
   }
+
+  .custom-tooltipBarchart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 39px;
+    height: 63px;
+    background: #E60000;
+
+    .label {
+      font-size: 7px;
+      color: white;
+    }
+  }
 }
+
