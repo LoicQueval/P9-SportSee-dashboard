@@ -29,3 +29,13 @@ export const getUserAverageSessions = async () => {
     }
     return undefined;
 }
+
+export const getUserPerformance = async () => {
+    const response = await fetch(`http://localhost:3000/user/${USER_ID}/performance`);
+    if (response.ok) {
+        return (await response.json()).data
+    } else {
+        console.error('Retour du serveur : ', response.status)
+    }
+    return undefined;
+}

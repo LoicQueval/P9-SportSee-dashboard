@@ -5,6 +5,7 @@ import {Header} from '../../components/header/header';
 import {Aside} from '../../components/aside/aside';
 import {Barchart} from '../../components/barchart/barchart';
 import {Linechart} from '../../components/linechart/linechart';
+import {Radarchart} from '../../components/radarchart/radarchart';
 
 function Dashboard() {
     const [serviceData, setServiceData] = useState();
@@ -29,7 +30,7 @@ function Dashboard() {
                                 <div className="bottom-graph">
                                     <Linechart/>
                                     <Linechart/>
-                                    <Linechart/>
+                                    <Radarchart/>
                                 </div>
                             </div>
                             <div>
