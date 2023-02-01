@@ -6,6 +6,7 @@ import {Aside} from '../../components/aside/aside';
 import {Barchart} from '../../components/barchart/barchart';
 import {Linechart} from '../../components/linechart/linechart';
 import {Radarchart} from '../../components/radarchart/radarchart';
+import {Radialbarchart} from '../../components/radialbarchart/radialbarchart';
 
 function Dashboard() {
     const [serviceData, setServiceData] = useState();
@@ -29,8 +30,8 @@ function Dashboard() {
                                 <Barchart/>
                                 <div className="bottom-graph">
                                     <Linechart/>
-                                    <Linechart/>
                                     <Radarchart/>
+                                    <Radialbarchart score={serviceData.todayScore ? serviceData.todayScore : serviceData.score}/>
                                 </div>
                             </div>
                             <div>

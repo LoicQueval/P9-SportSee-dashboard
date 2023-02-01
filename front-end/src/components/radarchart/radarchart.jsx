@@ -21,15 +21,16 @@ export const Radarchart = () => {
         }
     }
 
-    return (<>{serviceData && (
-            <ResponsiveContainer height={265} className="radarchart">
-                <RadarChart outerRadius={90} data={data.reverse()}>
-                    <PolarGrid gridType="polygon" radialLines={false}/>
-                    <PolarAngleAxis dataKey="kind" dy={3} tick={{fontSize: 12}}/>
-                    <Radar dataKey="value" fill="#FF0101" fillOpacity={0.7}/>
-                </RadarChart>
-            </ResponsiveContainer>
-        )}
+    return (<>
+            {serviceData && (
+                <ResponsiveContainer height={265} className="radarchart">
+                    <RadarChart outerRadius={90} data={data.reverse()}>
+                        <PolarGrid gridType="polygon" radialLines={false}/>
+                        <PolarAngleAxis dataKey="kind" dy={3} tick={{fontSize: 12}}/>
+                        <Radar dataKey="value" fill="#FF0101" fillOpacity={0.7}/>
+                    </RadarChart>
+                </ResponsiveContainer>
+            )}
         </>
     );
 }
