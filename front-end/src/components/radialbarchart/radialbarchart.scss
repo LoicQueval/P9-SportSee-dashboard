@@ -1,3 +1,5 @@
+@import "../../assets/styles/abstracts/variables";
+
 .radial {
   position: relative;
   width: 100%;
@@ -11,7 +13,7 @@
   }
 
   .radialchart {
-    background: #FBFBFB;
+    background: $dark-white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0212249);
     border-radius: 5px;
 
@@ -38,14 +40,14 @@
           font-size: 26px;
           line-height: 26px;
           margin: 5px 0 0 0;
-          color: #282D30;
+          color: $much-lighter-black;
         }
 
         .label {
           width: 95px;
           font-size: 16px;
           text-align: center;
-          color: #74798C;
+          color: $grey;
           margin: 5px 0;
         }
       }

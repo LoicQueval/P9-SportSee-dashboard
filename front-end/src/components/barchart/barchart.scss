@@ -1,5 +1,7 @@
+@import "../../assets/styles/abstracts/variables";
+
 .barchart {
-  background-color: #FBFBFB;
+  background-color: $dark-white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0212249);
   border-radius: 5px;
   padding: 23px 10px 20px 35px;
@@ -9,7 +11,7 @@
     margin: 0;
     font-size: 15px;
     line-height: 24px;
-    color: #20253A;
+    color: $lighter-black;
   }
 
   .custom-tooltipBarchart {
@@ -19,7 +21,7 @@
     align-items: center;
     width: 39px;
     height: 63px;
-    background: #E60000;
+    background: $light-red;
 
     .label {
       font-size: 7px;

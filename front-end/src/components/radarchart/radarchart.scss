@@ -1,5 +1,7 @@
+@import "../../assets/styles/abstracts/variables";
+
 .radarchart {
-  background-color: #282D30;
+  background-color: $much-lighter-black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0212249);
   border-radius: 5px;
 }
