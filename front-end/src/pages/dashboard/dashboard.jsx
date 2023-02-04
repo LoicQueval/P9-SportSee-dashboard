@@ -24,15 +24,14 @@ function Dashboard() {
         getUserData().then((res) => setServiceData(res))
     }, [])
 
-    console.log(serviceData);
-
     const data = [];
 
     if (serviceData) {
         const value = [serviceData.keyData.calorieCount, serviceData.keyData.proteinCount, serviceData.keyData.carbohydrateCount, serviceData.keyData.lipidCount];
         const unit = ['Kcal', 'g', 'g', 'g'];
         const color = ['#FF00001A', '#4AB8FF1A', '#F9CE231A', '#FD51811A'];
-        const type = ['Calories', 'Proteines','Glucides', 'Lipides']
+        const type = ['Calories', 'Proteines', 'Glucides', 'Lipides'];
+        const icon = [calories, proteines, glucides, lipides];
 
         for (let i = 0; i < 4; i++) {
             data.push({
@@ -40,11 +39,10 @@ function Dashboard() {
                 unit: unit[i],
                 color: color[i],
                 type: type[i],
+                icon: icon[i],
             })
         }
     }
-
-    console.log(data);
 
     return (<>
             <Header/>
@@ -66,14 +64,11 @@ function Dashboard() {
                                 </div>
                             </div>
                             <div className="cards">
-                                <Card icon={calories} color={'#FF00001A'} type={'Calories'} unit={'Kcal'}
-                                      value={serviceData.keyData.calorieCount}/>
-                                <Card icon={proteines} color={'#4AB8FF1A'} type={'Proteines'} unit={'g'}
-                                      value={serviceData.keyData.proteinCount}/>
-                                <Card icon={glucides} color={'#F9CE231A'} type={'Glucides'} unit={'g'}
-                                      value={serviceData.keyData.carbohydrateCount}/>
-                                <Card icon={lipides} color={'#FD51811A'} type={'Lipides'} unit={'g'}
-                                      value={serviceData.keyData.lipidCount}/>
+                                {data.map((item, index) => (
+                                    <Card key={`${index}`} icon={item.icon} color={item.color} type={item.type} unit={item.unit}
+                                          value={item.value}/>
+                                ))
+                                }
                             </div>
                         </div>
                     </section>
