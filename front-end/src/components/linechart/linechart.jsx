@@ -37,7 +37,7 @@ export const Linechart = () => {
     return (<>
             <p className="linechart-title">Durée moyenne des sessions</p>
             {serviceData && (
-                <ResponsiveContainer height={265} className="linechart">
+                <ResponsiveContainer height={window.innerWidth > 1340 ? 265 : 182} className="linechart">
                     <LineChart data={data}>
                         <Tooltip wrapperStyle={{outlineStyle: 'none'}} content={<CustomTooltip/>}/>
                         <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={false}/>

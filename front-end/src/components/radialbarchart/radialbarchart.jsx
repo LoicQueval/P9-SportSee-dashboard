@@ -33,7 +33,7 @@ export const Radialbarchart = ({score}) => {
             <p className="radialchart_title">Score</p>
             {data && (
                 <ResponsiveContainer>
-                    <RadialBarChart height={265} className="radialchart" startAngle={-270} endAngle={90} outerRadius="160"
+                    <RadialBarChart height={window.innerWidth > 1340 ? 265 : 182} className="radialchart" startAngle={-270} endAngle={90} outerRadius={window.innerWidth > 1300 ? "160" : "110"}
                                     innerRadius="0" barSize={10} data={data}>
                         <RadialBar dataKey="score" fill={data[0].fill} cornerRadius="87%"/>
                         <Legend verticalAlign="middle" content={CustomLabel}/>

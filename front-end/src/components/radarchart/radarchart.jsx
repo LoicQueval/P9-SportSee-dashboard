@@ -27,7 +27,7 @@ export const Radarchart = () => {
 
     return (<>
             {serviceData && (
-                <ResponsiveContainer height={265} className="radarchart">
+                <ResponsiveContainer height={window.innerWidth > 1340 ? 265 : 182} className="radarchart">
                     <RadarChart outerRadius={90} data={data.reverse()}>
                         <PolarGrid gridType="polygon" radialLines={false}/>
                         <PolarAngleAxis dataKey="kind" dy={3} tick={{fontSize: 12}}/>

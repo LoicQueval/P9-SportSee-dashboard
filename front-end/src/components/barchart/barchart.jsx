@@ -40,7 +40,7 @@ export const Barchart = () => {
         <div className="barchart">
             <p className="barchart_title">Activité quotidienne</p>
             {serviceData && (
-                <ResponsiveContainer height={320}>
+                <ResponsiveContainer height={window.innerWidth > 1340 ? 320 : 180}>
                     <BarChart data={data} barSize={7} barGap={8}>
                         <Tooltip content={CustomTooltip} wrapperStyle={{outlineStyle: 'none'}}/>
                         <CartesianGrid strokeDasharray="2 2" vertical={false}/>

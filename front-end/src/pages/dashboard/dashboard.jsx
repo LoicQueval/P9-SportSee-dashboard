@@ -65,8 +65,8 @@ function Dashboard() {
                             </div>
                             <div className="cards">
                                 {data.map((item, index) => (
-                                    <Card key={`${index}`} icon={item.icon} color={item.color} type={item.type} unit={item.unit}
-                                          value={item.value}/>
+                                    <Card key={`${index}`} icon={item.icon} color={item.color} type={item.type}
+                                          unit={item.unit} value={item.value}/>
                                 ))
                                 }
                             </div>
