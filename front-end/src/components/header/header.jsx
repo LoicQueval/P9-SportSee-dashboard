@@ -5,7 +5,6 @@ import logo from '../../assets/images/logo/logo.PNG'
  * Return the header navigation
  * @returns {React.ReactElement} A component
  */
-
 export const Header = () => {
     return (
         <header>

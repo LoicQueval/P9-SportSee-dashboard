@@ -7,7 +7,6 @@ import {getUserActivity} from '../../services/users';
  * Return the user activity in a barchart from Recharts
  * @returns {React.ReactElement} A component
  */
-
 export const Barchart = () => {
     const [serviceData, setServiceData] = useState();
     const data = [];

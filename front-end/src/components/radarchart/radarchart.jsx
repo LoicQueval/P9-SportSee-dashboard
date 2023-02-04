@@ -3,6 +3,10 @@ import {RadarChart, PolarAngleAxis, PolarGrid, Radar, ResponsiveContainer} from 
 import {useEffect, useState} from 'react';
 import {getUserPerformance} from '../../services/users';
 
+/**
+ * Return performance from the api in a radarchart Recharts
+ * @returns {React.ReactElement} A component
+ */
 export const Radarchart = () => {
     const [serviceData, setServiceData] = useState();
     const data = [];

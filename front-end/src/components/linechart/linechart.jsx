@@ -4,10 +4,9 @@ import {useEffect, useState} from 'react';
 import {getUserAverageSessions} from '../../services/users';
 
 /**
- * Return
+ * Return average time sessions from the api in a Linechart Recharts
  * @returns {React.ReactElement} A component
  */
-
 export const Linechart = () => {
     const [serviceData, setServiceData] = useState();
 

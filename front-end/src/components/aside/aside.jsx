@@ -8,7 +8,6 @@ import bodybuilding from '../../assets/images/activities/bodybuilding.PNG'
  * Return aside navigation
  * @returns {React.ReactElement} A component
  */
-
 export const Aside = () => {
     return (
         <aside>

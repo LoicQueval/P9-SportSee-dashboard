@@ -1,0 +1,49 @@
+.card {
+  height: 100%;
+  width: 258px;
+  border-radius: 5px;
+  background: #FBFBFB;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0212249);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+
+  .card-icon-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 6px;
+    background: #FF000070;
+
+    img {
+      height: 20px;
+      width: 20px;
+      opacity: initial;
+    }
+  }
+
+  .card-value-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-right: 10%;
+
+    .value {
+      color: #282D30;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+      margin: 0;
+    }
+
+    .type {
+      margin: 0;
+      font-size: 14px;
+      line-height: 24px;
+      color: #74798C;
+    }
+  }
+}
