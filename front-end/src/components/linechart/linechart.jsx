@@ -2,6 +2,7 @@ import './linechart.scss'
 import {LineChart, Line, Tooltip, XAxis, ResponsiveContainer, YAxis, CartesianGrid} from 'recharts';
 import {useEffect, useState} from 'react';
 import {getUserAverageSessions} from '../../services/users';
+import * as PropTypes from 'prop-types';
 
 /**
  * Return average time sessions from the api in a Linechart Recharts
@@ -45,10 +46,15 @@ export const Linechart = () => {
                             dx: 0, fontSize: 12
                         }}/>
                         <YAxis hide={true} domain={['dataMin - 10', 'dataMax + 40']}/>
-                        <Line type="monotone" dataKey="sessionLength" stroke="white" />
+                        <Line type="monotone" dataKey="sessionLength" stroke="white"/>
                     </LineChart>
                 </ResponsiveContainer>
             )}
         </>
     );
 }
+
+Linechart.propTypes = {
+    day: PropTypes.number,
+    sessionLength: PropTypes.number,
+};

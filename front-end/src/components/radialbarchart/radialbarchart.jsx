@@ -1,5 +1,6 @@
 import './radialbarchart.scss'
 import {RadialBarChart, Legend, RadialBar, ResponsiveContainer} from 'recharts';
+import * as PropTypes from 'prop-types';
 
 /**
  * Return objectif progression from the api in a Radialchart Recharts
@@ -43,3 +44,8 @@ export const Radialbarchart = ({score}) => {
         </div>
     );
 }
+
+RadialBar.propTypes = {
+    score: PropTypes.number,
+    fill: PropTypes.string,
+};

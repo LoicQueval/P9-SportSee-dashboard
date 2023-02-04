@@ -2,6 +2,7 @@ import './barchart.scss';
 import {Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis} from 'recharts';
 import {useEffect, useState} from 'react';
 import {getUserActivity} from '../../services/users';
+import * as PropTypes from 'prop-types';
 
 /**
  * Return the user activity in a barchart from Recharts
@@ -60,4 +61,10 @@ export const Barchart = () => {
             )}
         </div>
     );
+}
+
+Barchart.propTypes = {
+    day: PropTypes.number,
+    kilogram: PropTypes.number,
+    calories: PropTypes.number,
 }

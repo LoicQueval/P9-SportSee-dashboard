@@ -24,4 +24,5 @@ Card.propTypes = {
     unit: PropTypes.string,
     type: PropTypes.string,
     color: PropTypes.string,
+    icon: PropTypes.string,
 };

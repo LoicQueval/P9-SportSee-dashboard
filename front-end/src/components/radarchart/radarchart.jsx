@@ -2,6 +2,7 @@ import './radarchart.scss'
 import {RadarChart, PolarAngleAxis, PolarGrid, Radar, ResponsiveContainer} from 'recharts';
 import {useEffect, useState} from 'react';
 import {getUserPerformance} from '../../services/users';
+import * as PropTypes from 'prop-types';
 
 /**
  * Return performance from the api in a radarchart Recharts
@@ -39,3 +40,7 @@ export const Radarchart = () => {
     );
 }
 
+Radarchart.propTypes = {
+    kind: PropTypes.string,
+    value: PropTypes.number,
+};
