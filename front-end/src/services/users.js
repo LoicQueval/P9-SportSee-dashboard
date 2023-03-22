@@ -1,4 +1,7 @@
-const USER_ID = 18;
+import USER_ACTIVITY, {USER_AVERAGE_SESSIONS, USER_MAIN_DATA, USER_PERFORMANCE} from '../services/mock'
+
+const USER_ID = 12;
+const isMock = true;
 
 /**
  * Fetch the general user info from api
@@ -18,12 +21,16 @@ const USER_ID = 18;
  */
 export const getUserData = async () => {
     const response = await fetch(`http://localhost:3000/user/${USER_ID}`);
-    if (response.ok) {
-        return (await response.json()).data
+    if (!isMock) {
+        if (response.ok) {
+            return (await response.json()).data
+        } else {
+            console.error('Retour du serveur : ', response.status)
+        }
+        return undefined;
     } else {
-        console.error('Retour du serveur : ', response.status)
+        return USER_MAIN_DATA.find(user => user.id === USER_ID);
     }
-    return undefined;
 }
 
 /**
@@ -37,12 +44,16 @@ export const getUserData = async () => {
  */
 export const getUserActivity = async () => {
     const response = await fetch(`http://localhost:3000/user/${USER_ID}/activity`);
-    if (response.ok) {
-        return (await response.json()).data
+    if (!isMock) {
+        if (response.ok) {
+            return (await response.json()).data
+        } else {
+            console.error('Retour du serveur : ', response.status)
+        }
+        return undefined;
     } else {
-        console.error('Retour du serveur : ', response.status)
+        return USER_ACTIVITY.USER_ACTIVITY.find(user => user.userId === USER_ID);
     }
-    return undefined;
 }
 
 /**
@@ -55,12 +66,16 @@ export const getUserActivity = async () => {
  */
 export const getUserAverageSessions = async () => {
     const response = await fetch(`http://localhost:3000/user/${USER_ID}/average-sessions`);
-    if (response.ok) {
-        return (await response.json()).data
+    if (!isMock) {
+        if (response.ok) {
+            return (await response.json()).data
+        } else {
+            console.error('Retour du serveur : ', response.status)
+        }
+        return undefined;
     } else {
-        console.error('Retour du serveur : ', response.status)
+        return USER_AVERAGE_SESSIONS.find(user => user.userId === USER_ID)
     }
-    return undefined;
 }
 
 /**
@@ -75,10 +90,14 @@ export const getUserAverageSessions = async () => {
  */
 export const getUserPerformance = async () => {
     const response = await fetch(`http://localhost:3000/user/${USER_ID}/performance`);
-    if (response.ok) {
-        return (await response.json()).data
+    if (!isMock) {
+        if (response.ok) {
+            return (await response.json()).data
+        } else {
+            console.error('Retour du serveur : ', response.status)
+        }
+        return undefined;
     } else {
-        console.error('Retour du serveur : ', response.status)
+        return USER_PERFORMANCE.find(user => user.userId === USER_ID);
     }
-    return undefined;
 }
